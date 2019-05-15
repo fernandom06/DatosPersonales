@@ -11,11 +11,12 @@ package clases;
  */
 public class Persona implements Comparable<Persona>{ 
     
-    public String nombre,apellido;
-    public Integer id;
+    private String nombre;
+    private String apellido;
+    private Integer id;
     
     
-    public Persona(String nombre, String apellido, Integer id) {
+    public Persona(String nombre, String apellido, Integer id, Float estatura) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.id = id;
@@ -49,13 +50,13 @@ public class Persona implements Comparable<Persona>{
     
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + '}'+"\n";
+        return "Persona{" + "nombre=" + getNombre() + ", apellido=" + getApellido() + ", id=" + getId() + '}'+"\n";
     }
 
     @Override
     public int compareTo(Persona t) {
         
-        return nombre.compareTo(t.getNombre());
+        return getNombre().compareTo(t.getNombre());
         
     }
     
